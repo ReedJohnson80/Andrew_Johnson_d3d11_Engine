@@ -1,18 +1,15 @@
 #pragma once
 #include "AdapterReader.h"
 #include "Shaders.h"
-#include "Vertex.h"
 #include <SpriteBatch.h>
 #include <SpriteFont.h>
 #include <WICTextureLoader.h>
-#include "VertexBuffer.h"
-#include "IndexBuffer.h"
-#include "ConstantBuffer.h"
 #include "Camera.h"
 #include "..\\Timer.h"
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_win32.h"
 #include "imgui/imgui_impl_dx11.h"
+#include "Model.h"
 
 class Graphics
 {
@@ -42,9 +39,10 @@ private:
 	VertexShader										vertexShader;
 	PixelShader											pixelShader;
 
+//Models
+	Model												model;
+
 //Buffers
-	VertexBuffer<Vertex>								vertexBuffer;
-	IndexBuffer											indexBuffer;
 	ConstantBuffer<CB_VS_VertexShader>					cb_vs_vertexShader;
 	ConstantBuffer<CB_PS_PixelShader>					cb_ps_pixelShader;
 
